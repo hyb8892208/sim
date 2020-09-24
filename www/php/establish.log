@@ -1,0 +1,4 @@
+[2017-03-23 11:17:38'841]<INFO>LinkEstablish:============================== LinkEstablish Start ============================== {LinkEstablish.cpp->518}
+[2017-03-23 11:17:38'846]<INFO>LinkEstablish:read_strategy_conf: mode: 2, duration_online: 20, duration_sleep: 120, counts: 3, duration_establish_scan: 10, duration_release_scan: 10 {LinkEstablish.cpp->523}
+[2017-03-23 11:17:38'846]<INFO>LinkEstablish:read_proxy_conf: ip: 172.16.1.54, port: 6201 {LinkEstablish.cpp->174}
+[2017-03-23 11:17:38'846]<INFO>LinkEstablish:connect[172.16.1.54:6203] to Server[172.16.1.54:6201] error(9:Bad file descriptor) {LinkEstablish.cpp->534}(err=9)

@@ -1,0 +1,10 @@
+sql语句错误：
+UPDATE tb_gateway_info SET d_heartbeat_time = 2016-03-16 18:18:53 where ob_gw_seri = e000009821
+客户IP:
+时间 :2016-03-16 18:18:53
+
+sql语句错误：
+UPDATE tb_gateway_info SET d_heartbeat_time = "2016-03-16 18:20:41" where ob_gw_seri = e000009821
+客户IP:
+时间 :2016-03-16 18:20:41
+

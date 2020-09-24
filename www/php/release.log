@@ -1,0 +1,4 @@
+[2017-03-23 11:17:38'853]<INFO>LinkRelease:============================== LinkRelease Start ============================== {LinkRelease.cpp->339}
+[2017-03-23 11:17:38'853]<INFO>LinkRelease:read_strategy_conf: mode: 2, duration_online: 20, duration_sleep: 120, counts: 3, duration_establish_scan: 10, duration_release_scan: 10 {LinkRelease.cpp->344}
+[2017-03-23 11:17:38'853]<INFO>LinkRelease:read_proxy_conf: ip: 172.16.1.54, port: 6201 {LinkRelease.cpp->174}
+[2017-03-23 11:17:38'853]<INFO>LinkRelease:connect[172.16.1.54:6203] to Server[172.16.1.54:6201] error(9:Bad file descriptor) {LinkRelease.cpp->355}(err=9)

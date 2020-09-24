@@ -1,0 +1,1022 @@
+language#english#English
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;     Language Package Description
+;
+;     Format:
+;          key="value"
+;
+;     Notice:
+;          1.Package head line format: language#xxx#XXXX
+;            xxx is the Internal identification.
+;            XXX is the web view.
+;          2.Package must save format: UTF-8(No BOM)
+;          3.If there is ["] in value, please use [\"]. For example: 
+;            language help="This is \"Portuguese\""
+;
+;     2017.11.27
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;    general
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[general]
+Name="Name"
+User Name="User Name"
+Password="Password"
+Port="Port"
+From="From"
+Type="Type"
+To="To"
+Enable="Enable"
+Enable help="ON(enabled),OFF(disabled)"
+All="All"
+All help="Select all or deselect all."
+
+Report="Report"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;    special
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[special]
+_On="On"
+_None="None"
+_No="No"
+_Yes="Yes"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;    week
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[week]
+Monday="Monday"
+Tuesday="Tuesday"
+Wednesday="Wednesday"
+Thursday="Thursday"
+Friday="Friday"
+Saturday="Saturday"
+Sunday="Sunday"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;    month
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[month]
+January="January"
+February="February"
+March="March"
+April="April"
+May="May"
+June="June"
+July="July"
+August="August"
+September="September"
+October="October"
+November="November"
+December="December"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;    menu
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[menu]
+System="SYSTEM"
+Register="REGISTER"
+Call="Call"
+SMS="SMS"
+Network="NETWORK"
+Strategy="STRATEGY"
+Log="LOG"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;    title
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[title]
+;system
+Sim Status="Sim Status"
+Sim Info="Sim Info"
+Login Settings="Login Settings"
+General="General"
+System Time="System Time"
+Information="Information"
+Tools="Tools"
+Switch to Client="Switch to Client"
+Switch to Server="Switch to Server"
+
+;register
+Simbank="Simbank"
+Gateway="Gateway"
+
+;sms
+SMS Sender="SMS Sender"
+SMS Inbox="SMS Inbox"
+Balance Query="Balance Query"
+
+;network
+Lan Settings="Lan Settings"
+
+;strategy
+Strategy Settings="Strategy settings"
+
+;log
+SimProxySvr Log="SimProxySvr Log"
+Client Log="Client Log"
+Simbank Settings="Simbank Settings"
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;    button
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[button]
+Save="Save"
+Cancel="Cancel"
+
+Action="Action"
+Actions="Actions"
+Manual="Manual"
+Send="Send"
+Stop="Stop"
+Add="Add"
+Reset="Reset"
+
+Download="Download"
+Modify="Modify"
+
+Filter="Filter"
+Clean Filter="Clean Filter"
+
+Delete="Delete"
+Delete confirm="Are you sure to delete you selected ?"
+Clean Up="Clean Up"
+Clean Up confirm="Are you sure to clean up this logs?"
+Clean All="Clean All"
+Clean All confirm="Are you sure to clean up all logs?"
+Export="Export"
+
+Apply="Apply"
+Apply Bar help="Settings have been changed. Calls may be terminated when you apply these changes. Do you want to apply now ? "
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;    pages
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[pages]
+Previous page="Previous page"
+Next page="Next page"
+input page help="Please input your page number, and press [Enter] to skip to."
+total pages="total pages"
+goto input page="goto input page"
+go="go"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	system-monitor_sim.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[system-status]
+Empty="Empty"
+Registering="Registering"
+Assigned="Assigned"
+Talking="Talking"
+Sleep="Sleep"
+Overtime="Overtime"
+Col="Col"
+Ready="Ready"
+Select="Select"
+Idle="Idle"
+Edit Phone Number="Edit Phone Number"
+Empty card tip="Please choose a sim card !"
+
+Network Information="Network Information"
+MAC Address="MAC Address"
+IP Address="IP Address"
+Mask="Mask"
+RX Packets="RX Packets"
+TX Packets="TX Packets"
+VPN Information="VPN Information"
+Empty Bank="Empty Bank"
+Remove="Remove"
+Remove Sim Abnormal="Remove Sim Abnormal"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	sim-info.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sim-info]
+port="port"
+Phone Number="Phone Number"
+Balance="Balance"
+Time="Time"
+go="go"
+Page tip="Page does not exist!"
+clean up tip="Are you sure you want to clean up all the data?"
+Database busy tip="Database is busy now. Please try later."
+
+[sim-balance]
+Normal="Normal"
+Insufficient Balance="Insufficient Balance"
+Shutdown="Shutdown"
+Balance Unknown="Balance Unknown"
+Sim Balance="Sim Balance"
+Balance="Balance"
+State="State"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	system-login.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[system-login]
+Web Login Settings="Web Login Settings"
+;User Name="User Name"
+User Name help@system-login web="NOTES: Your gateway doesn't have administration role. <br/>All you can do here is defining the username and password to manage your gateway.<br/>And it has all privileges to operate your gateway.<br/>User Name: Allowed characters \"-_+.<>&0-9a-zA-Z\".Length: 1-32 characters."
+;Password="Password"
+Confirm Password="Confirm Password"
+Confirm Password help@system-login web="Please input the same password as 'Password' above."
+Confirm Password warning@system-login web="This password must match the password above."
+SSH Login Settings="SSH Login Settings"
+;User Name="User Name"
+User Name help@system-login ssh="User Name: Allowed characters \"-_+.<>&0-9a-zA-Z\".Length: 1-32 characters.</br>Can't use 'root'."
+User Name warning@system-login ssh="Can't use 'root'"
+;Password="Password"
+;Port="Port"
+Port help@system-login ssh="SSH login port number."
+
+web server port help="Specify the web server port number."
+js webserver port help="Range: 1024-65535, Default 80. Some ports are forbidding."
+username empty tip="Username cannot be empty."
+password empty tip="Password cannot be empty."
+password2 empty tip="Confirm Password cannot be empty."
+
+;Save="Save"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	system-general.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[system-general]
+Language Debug="Language Debug"
+TURN ON="TURN ON"
+TURN OFF="TURN OFF"
+Scheduled Reboot="Scheduled Reboot"
+Reboot Type="Reboot Type"
+Reboot Type help="By Day: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reboot everyday at xx:xx(time). <br>By Week: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reboot everyweek on XXX(week day) at xx:xx(time). <br>By Month: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reboot everymonth on XXX(Month day) at xx:xx(time). <br>By Running Time: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reboot periodically by the run time."
+By Day="By Day"
+By Week="By Week"
+By Month="By Month"
+By Running Time="By Running Time"
+;Time="Time"
+Running Time="Running Time"
+Running Time help=""
+Month="Month"
+Week="Week"
+Day="Day"
+Hour="Hour"
+Minute="Minute"
+
+Sun="Sun"
+Mon="Mon"
+Tue="Tue"
+Wed="Wed"
+Thu="Thu"
+Fri="Fri"
+Sat="Sat"
+
+Language Settings="Language Settings"
+Language="Language"
+Language Package="Language Package"
+Advanced="Advanced"
+
+;Download="Download"
+Language Download help="Download selected language package."
+Language Download error="Can not find Your select language package."
+
+Add New Language="Add New Language"
+New language Package="New language Package"
+Language Package Upload Filesize error="Your uploaded file was larger than 1MB!<br>Uploading language package was failed.<br>"
+Language Package Upload Move Failed="Language Package Upload Move Failed"
+Language Package Upload Failed="Language Package Upload Failed"
+Language Package Format error="Language Package Format error"
+Add Language overwrite alert="Language already exists!\nReadyonly Language cannot be overwrite!"
+Add Language overwrite confirm="Language already exists!\nDo you want to overwrite it?"
+
+Delete language help="Delete selected language."
+Delete Language alert="Sorry, you can not delete the default language."
+Delete Language confirm="Are you sure to delete the selected language package?"
+Select File alert="Please select your file first!"
+Language Package Size alert="Uploaded max file is 1MB!"
+Simbank Version="Simbank Version"
+Version="Version"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	system-time.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[system-time]
+Time Settings="Time Settings"
+System Time="System Time"
+System Time help@system-time="Your gateway system time."
+Time Zone="Time Zone"
+Time Zone help@system-time="The world time zone. Please select the one which is the same as or the closest to your city."
+POSIX TZ String="POSIX TZ String"
+POSIX TZ String help="Posix timezone strings."
+NTP Server 1="NTP Server 1"
+NTP Server 1 help="Time server domain or hostname.For example, [time.asia.apple.com] "
+NTP Server 2="NTP Server 2"
+NTP Server 2 help="The first reserved NTP server.For example, [time.windows.com] "
+NTP Server 3="NTP Server 3"
+NTP Server 3 help="The second reserved NTP server.For example, [time.nist.gov] "
+Auto-Sync from NTP="Auto-Sync from NTP"
+Auto-Sync from NTP help="Whether enable automatically synchronize from NTP server or not. On(enabled),OFF(disabled)."
+
+Sync from NTP="Sync from NTP"
+Sync from Client="Sync from Client"
+
+;Report="Report"
+Time Synchronize="Time Synchronize"
+Synchronize Succeeded="Synchronize Succeeded"
+Synchronize Failed="Synchronize Failed"
+Client Synchronize Succeeded="Client Synchronize Succeeded"
+Client Synchronize Failed="Client Synchronize Failed"
+
+;Time Zone
+Australia="Australia"
+Melbourne,Canberra,Sydney="Melbourne,Canberra,Sydney"
+Perth="Perth"
+Brisbane="Brisbane"
+Adelaide="Adelaide"
+Darwin="Darwin"
+Hobart="Hobart"
+
+Europe="Europe"
+Amsterdam,Netherlands="Amsterdam,Netherlands"
+Athens,Greece="Athens,Greece"
+Berlin,Germany="Berlin,Germany"
+Brussels,Belgium="Brussels,Belgium"
+Bratislava,Slovakia="Bratislava,Slovakia"
+Budapest,Hungary="Budapest,Hungary"
+Copenhagen,Denmark="Copenhagen,Denmark"
+Dublin,Ireland="Dublin,Ireland"
+Helsinki,Finland="Helsinki,Finland"
+Kyiv,Ukraine="Kyiv,Ukraine"
+Lisbon,Portugal="Lisbon,Portugal"
+London,GreatBritain="London,GreatBritain"
+Madrid,Spain="Madrid,Spain"
+Oslo,Norway="Oslo,Norway"
+Paris,France="Paris,France"
+Prague,CzechRepublic="Prague,CzechRepublic"
+Roma,Italy="Roma,Italy"
+Moscow,Russia="Moscow,Russia"
+Stockholm,Sweden="Stockholm,Sweden"
+Zurich,Switzerland="Zurich,Switzerland"
+
+New Zealand="New Zealand"
+Auckland, Wellington="Auckland, Wellington"
+
+USA and Canada="USA & Canada"
+Hawaii Time="Hawaii Time"
+Alaska Time="Alaska Time"
+Pacific Time="Pacific Time"
+Mountain Time="Mountain Time"
+Mountain Time @Arizona, no DST="Mountain Time (Arizona, no DST)"
+Central Time="Central Time"
+Eastern Time="Eastern Time"
+
+Atlantic="Atlantic"
+Bermuda="Bermuda"
+
+Asia="Asia"
+;Asia (UTC+1)
+Anadyr="Anadyr"
+
+;Asia (UTC+2)
+Amman="Amman"
+Beirut="Beirut"
+Damascus="Damascus"
+Gaza="Gaza"
+Jerusalem="Jerusalem"
+Nicosia="Nicosia"
+
+;Asia (UTC+3)
+Aden="Aden"
+Baghdad="Baghdad"
+Bahrain="Bahrain"
+Kuwait="Kuwait"
+Qatar="Qatar"
+Riyadh="Riyadh"
+
+;Asia (UTC+3:30)
+Tehran="Tehran"
+
+;Asia (UTC+4)
+Baku="Baku"
+Dubai="Dubai"
+Muscat="Muscat"
+Tbilisi="Tbilisi"
+Yerevan="Yerevan"
+
+;Asia (UTC+4:30)
+Kabul="Kabul"
+
+;Asia (UTC+5)
+Aqtobe="Aqtobe"
+Ashgabat="Ashgabat"
+Dushanbe="Dushanbe"
+Karachi="Karachi"
+Oral="Oral"
+Samarkand="Samarkand"
+Tashkent="Tashkent"
+Yekaterinburg="Yekaterinburg"
+
+;Asia (UTC+5:30)
+Calcutta="Calcutta"
+Colombo="Colombo"
+Almaty="Almaty"
+Bishkek="Bishkek"
+Dhaka="Dhaka"
+Novosibirsk="Novosibirsk"
+Omsk="Omsk"
+Qyzylorda="Qyzylorda"
+Thimphu="Thimphu"
+
+;Asia (UTC+7)
+Jakarta="Jakarta"
+Bangkok="Bangkok"
+Vientiane="Vientiane"
+Phnom Penh="Phnom Penh"
+
+;Asia (UTC+8)
+Chongqing="Chongqing"
+Hong Kong="Hong Kong"
+Shanghai="Shanghai"
+Singapore="Singapore"
+Urumqi="Urumqi"
+Taiwan="Taiwan"
+Ulaanbaatar="Ulaanbaatar"
+
+;Asia (UTC+9)
+Dili="Dili"
+Jayapura="Jayapura"
+Pyongyang="Pyongyang"
+Seoul="Seoul"
+Tokyo="Tokyo"
+Yakutsk="Yakutsk"
+
+Central and South America="Central and South America"
+Sao Paulo,Brazil="Sao Paulo,Brazil"
+Argentina="Argentina"
+Central America @no DST="Central America (no DST)"
+Venezuela="Venezuela"
+
+Unknown="Unknown"
+User defined @or out of date="User defined (or out of date)"
+Save Data="Save Data"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	system-tools.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[system-tools]
+Reboot Tools="Reboot Tools"
+System Reboot="System Reboot"
+System Reboot help="Reboot the gateway and all the current calls will be dropped."
+System Reboot confirm="Are you sure to reboot your gateway now?\nYou will lose all data in memory!"
+Asterisk Reboot="Asterisk Reboot"
+Asterisk Reboot help="Reboot the asterisk and all the current calls will be dropped."
+Asterisk Reboot confirm="Are you sure to reboot Asterisk now?"
+
+Update Firmware="Update Firmware"
+System Update="System Update"
+System Update filesize alert="Uploaded max file is 40M!"
+System Update IE alert="Please allow ActiveX Scripting File System Object!"
+System Update confirm="Are you sure to update your system?\\nUse caution, please!This might damage the structure of your original configuration files."
+New system file="New system file"
+System Online Update="System Online Update"
+System Online Update help="New system file is downloaded from official website and update system. "
+System version help 1="Your current system version is :"
+System version help 2="The latest system version is :"
+System version help 3="Warning:\nDO NOT leave this page in the process of updating; OTHERWISE system updating will fail!\n"
+System Online Update confirm="Be cautious, please :\nThis might damage the structure of your original configuration files!\nAre you sure to update your system?\n"
+System Online Update version error="Get remote version failed. Please check the network connection is correct!"
+System Online Update Download error="Download system file failed. Please check the network connection is correct!"
+System Online Update fopen error="Save system file failed!"
+
+Upload Configuration="Upload Configuration"
+File Upload="File Upload"
+File Upload confirm="Are you sure to upload configuration files?\nThis will damage the structure of your original configuration files."
+New configuration file="New configuration file"
+
+Backup Configuration="Backup Configuration"
+Download Backup="Download Backup"
+Current configuration file version="Current configuration file version"
+
+Restore Configuration="Restore Configuration"
+Factory Reset="Factory Reset"
+Factory Reset help="This will cause all the configuration files to back to default factory values! And reboot your gateway once it finishes."
+Factory Reset confirm="Are you sure to restore configuration file now?"
+
+;output
+;Report="Report"
+;Slave="Slave"
+Result="Result"
+
+;system reboot
+;System Reboot="System Reboot"
+System Rebooting="System Rebooting"
+System Reboot wait="System Rebooting...<br>Please wait for about 60s, system will be rebooting."
+
+;asterisk reboot
+;Asterisk Reboot="Asterisk Reboot"
+Asterisk Rebooting="Asterisk Rebooting"
+Asterisk Reboot Succeeded="Asterisk Reboot Succeeded"
+Asterisk Reboot Failed="Asterisk Reboot Failed"
+
+;system update
+;System Update="System Update"
+System Update Filesize error="Your updated file was larger than 40M!<br>Updating system was failed."
+System Update Move error="Moving your updated file was failed!<br>Updating system was failed."
+System Updating="System Updating......"
+fork error="fork error"
+Error code="Error code"
+System Update Succeeded="System Update Succeeded"
+System Update Succeeded help="You must reboot system to entry the newer system."
+System Update error 1="The file was larger than the server space 40M!"
+System Update error 2="The file was larger than the browser's limit!"
+System Update error 3="The file was only partially uploaded!"
+System Update error 4="Can not find uploaded file!"
+System Update error 5="The server temporarily lost folder!"
+System Update error 6="Failed to write to the temporary folder!"
+System Update Failed="System Update Failed"
+
+Downloading="Downloading"
+System Online Updating="System Online Updating......"
+Updating system="Updating system"
+Update failed="Update failed"
+update failed output="Updating system was failed.<br>Error code: "
+update succeed output="Successfully update your system!<br>You must reboot system to entry the newer system."
+;fork error="fork error"
+
+Updating system was failed="Updating system was failed"
+
+;upload cfg file
+Configuration Files Upload="Configuration Files Upload"
+Configuration Files Upload Filesize error="Your uploaded file was larger than 40M!<br>Uploading configuration files was failed."
+Configuration Files Upload Move error="Moving your updated file was failed!<br>Uploading configuration files was failed."
+Configuration Files Uploading="Configuration Files Uploading"
+Configuration Files Upload Failed="Configuration Files Upload Failed"
+Configuration Files Upload Succeeded="Configuration Files Upload Succeeded"
+Configuration Files Upload version error 1="</br>Can not find configration file!</br>Can not find asterisk/cfg_version!<br>"
+Configuration Files Upload version error 2="</br>Unknown configuration version!"
+Configuration Files Upload version error 3="</br>Your current system does not support this configuration version!</br>"
+Configuration Files Upload check="Checking configuration version....<br>"
+Configuration Files Upload update="Updating configuration files....<br>"
+Configuration Files Upload error 1="The file was larger than the server space 40M!"
+Configuration Files Upload error 2="The file was larger than the browser's limit!"
+Configuration Files Upload error 3="The file was only partially uploaded!"
+Configuration Files Upload error 4="Can not find uploaded file!"
+Configuration Files Upload error 5="The server temporarily lost folder!"
+Configuration Files Upload error 6="Failed to write to the temporary folder!"
+Stop Asterisk="stopping asterisk....<br>"
+Start Asterisk="Starting asterisk....<br>"
+Upload File tip="The file name does not comply with the specification!"
+File Uploading="File Uploading......"
+
+;downlad cfg files
+Packing was failed="Packing was failed"
+;Error code="Error code"
+Can not find="Can not find"
+
+;Configuration Restore
+Configuration Restore="Configuration Restore"
+Configuration Restore wait="Default Configuration Files Restoring...<br>Please wait for about 60s, system will be rebooting."
+Configuration Restoring="Configuration Restoring"
+Configuration Restore Failed="Configuration Restore Failed"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	system-info.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[system-info]
+Model Name="Model Name"
+GSM Modem Description="GSM Modem Description"
+Software Version="Software Version"
+Hardware Version="Hardware Version"
+Slot Number="Slot Number"
+Storage Usage="Storage Usage"
+Memory Usage="Memory Usage"
+Memory Clean="Memory Clean"
+Build Time="Build Time"
+Contact Address="Contact Address"
+Contact Address Contents="F/3, Building 127, Jindi industrial zone, Futian district, Shenzhen, Guangdong, China"
+Tel="Tel"
+Fax="Fax"
+E-Mail="E-Mail"
+Web Site="Web Site"
+Rebooting Counts="Rebooting Counts"
+;System Time="System Time"
+System Uptime="System Uptime"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	simbank-manage.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[simbank-manage]
+Simbank Information="Simbank Information"
+Serial Number="Serial Number"
+Serial Number help="Serial Number"
+Simbank Line Number="Simbank Line Number"
+Simbank Line Number help="Simbank Line Number"
+Limit of Call Time="Limit of Call Time"
+Enable sign="Enable sign"
+On-line state="On-line state"
+On-Line="On-Line"
+Off-Line="Off-Line"
+delete tip="Are you sure to delete you selected ?"
+Actions="Actions"
+Add New Simbank Info="Add New Simbank Info"
+Enable="Enable"
+Enable help="control the client's rights to use by this button"
+Register Password="Register Password"
+Register Password help="Register Password"
+Register Advance Setting="Register Advance Setting"
+Register Advance Setting help="Updating para of the simbank register or not"
+Recover day="Recover day"
+Recover day help="Next reset time"
+Total call time="Total call time"
+Total call time help="The total call time of this month"
+Description="Description"
+Description help="Description"
+Modify Simbank Info="Modify Simbank Info"
+Create Simbank Info="Create Simbank Info"
+js_serial_tip="Allow serial number must be any of [\u4E00-\u9FA5A-Za-z0-9]{2,10}$(chinese number and english),2 - 10 characters"
+js_gateway_tip="Allow gateway line number must be any of [-_+.<>&0-9a-zA-Z],1 - 32 characters."
+js_password_tip="Allow the password must be any of [0-9a-zA-Z`~!@$%^&*()_+{}|<>?-=[],./],4 - 32 characters."
+minutes="minutes"
+day="day"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	gateway-manage.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[gateway-manage]
+Gateway Information="Gateway Information"
+Gateway Line Number="Gateway Line Number"
+Gateway Line Number help="Gateway Line Number"
+The heartbeat of time="The heartbeat of time"
+Add New Gateway Info="Add New Gateway Info"
+Modify gateway Info="Modify gateway Info"
+Create gateway Info="Create gateway Info"
+sim_manage_tip1="It will empty the record of original call time and change the registration data! Are you sure to change original setting ?"
+sim_manage_tip2="Please enable the register advance setting"
+sim_manage_tip3="Do you confirm to reset Total call time?"
+Operation Success="Operation Success"
+Gateway Info Already Exists="Gateway Info Already Exists"
+Operation Miss="Operation Miss"
+Delete Success="Delete Success"
+Delete Failed="Delete Failed"
+Distribution Mode="Distribution Mode"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	sms-request.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sms-request]
+SMS Send Parameters="SMS Send Parameters"
+Destination Number="Destination Number"
+Receive Number="Receive Number"
+Message="Message"
+The Matching Characters="The Matching Characters"
+SMS Type="SMS Type"
+SIM Balance="SIM Balance"
+phone number="phone number"
+other="other"
+Next="Next"
+Back="Back"
+sms_select_tip="Please select at least one card!"
+sms_destination_tip="*Destination Number cannot be empty."
+sms_character_tip="*Allow character must be less than 15 characters."
+sms_receive_number_tip="*Receive Number cannot be empty."
+sms_message_tip="*Message cannot be empty."
+sms_character_tip2="*Allow character must be less than 127 characters."
+sms_matching_tip="*The Matching Characters cannot be empty."
+sms_character_tip3="*Allow character must be less than 31 characters."
+sms_type_tip="The 'other' SMS type do not need to be filled in."
+Destination help="This is the destination number which you want to send."
+Receive number help="This number will receive the message."
+Message help="The SMS content to be sent out."
+characters help="Here is the key to find the phone number or SIM balance.For example, if you want to query the phone number,and receive message is "your phone number is xxxxxx",You should fill in "number".<br>If you want to send other message,you can ignore it."
+SMSTYPE help="Choose send type content."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	sms-inbox.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[sms-inbox]
+;Port="Port"
+Phone Number="Phone Number"
+;Time="Time"
+Message Keywords="Message Keywords"
+;Message="Message"
+
+Total Records="Total Records"
+NO RECORD="NO RECORD"
+DATABASE BUSY="DATABASE BUSY"
+
+;Filter="Filter"
+;Clean Filter="Clean Filter"
+;Delete="Delete"
+;Clean Up="Clean Up"
+;Export="Export"
+No page tip="No page"
+Invalid num tip="invalid phone number"
+Clean Up smss tip="Are you sure to delete all smss ?"
+
+Scheduled send type="Scheduled send type"
+Scheduled send type help="Set the time to send SMS by day or hour. If the corresponding value is set to 0, the time to send SMS will not be enabled.<br/>Note: there is a risk of blocking the card if the balance is queried too frequently."
+By Day@sms="By Day"
+By Hour="By Hour"
+Day help="Send SMS every corresponding days, 0 means not to send."
+Hour help="Send SMS every corresponding hours, 0 means not to send."
+
+[sms-simquery]
+Balance Status Settings="Balance Status Settings"
+Insufficient Balance@sms-simquery="Insufficient Balance"
+Insufficient Balance@sms-simquery help="Insufficient Balance"
+Shutdown Balance="Shutdown Balance"
+Shutdown Balance help="Shutdown Balance"
+Add more Query="Add more Query"
+Start Query="Start Query"
+End Query="End Query"
+Balance query error="Balance query error"
+Querying="Querying"
+Returning data="Returning data"
+Carrier Name="Carrier Name"
+Carrier Number="Carrier Number"
+Carrier Number cannot be repeated="Carrier Number cannot be repeated"
+Shutdown Balance tip="Shutdown Balance must be less than Insufficient Balance."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	network-lan.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[network-lan]
+LAN IPv4="LAN IPv4"
+Interface="Interface"
+Interface help="The name of network interface."
+;Type="Type"
+Type help@network-lan="The method to get IP.<br/>Factory: Getting IP address by Slot Number(System-->Information to check slot number).<br/>Static: manually set up your gateway IP."
+Factory="Factory"
+Static="Static"
+DHCP="DHCP"
+MAC="MAC"
+MAC help="Physical address of your network interface."
+
+IPv4 Settings="IPv4 Settings"
+Address="Address"
+Address help="The IP address of your simbank gateway."
+Netmask="Netmask"
+Netmask help="The subnet mask of your gateway."
+Default Gateway="Default Gateway"
+Default Gateway help="Default gateway IP addrress."
+
+Reserved Access IP="Reserved Access IP"
+Reserved Access IP help="A reserved IP address to access in case your gateway IP is not available.<br/>Remember to set a similar network segment with the following address of your local PC."
+;Enable="Enable"
+Enable help@network-lan="A switch to enable the reserved IP address or not.<br/>On(enabled),Off(disabled)"
+Reserved Address="Reserved Address"
+Reserved Address help="The reserved IP address for this gateway."
+Reserved Netmask="Reserved Netmask"
+Reserved Netmask help="The subnet mask of the reserved IP address."
+
+DNS Servers="DNS Servers"
+DNS Servers help="A list of DNS IP address. <br/>Basically this info is from your local network service provider."
+DNS Server="DNS Server"
+
+;Save="Save"
+
+Burn="Burn"
+Mac Tip="Please enter a 12-bit string with character requirements of 0-9 or a-f or A-F"
+Burn Confirm="After clicking 'burning' to complete, the device will automatically shut down! Do you want to continue?"
+MAC Address Diff="Note: MAC address is inconsistent with current."
+MAC Address Same="MAC address is the same as the current one."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	network-vpn.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+VPN Settings="VPN Settings"
+pptp-vpn connection status="pptp-vpn connection status"
+VPNType="VPNType"
+Server="Server"
+Client="Client"
+PPTP VPN Settings="PPTP VPN Settings"
+PPTP VPN Configuration help="The pptp's server ip address."
+PPTP VPN Account help="PPTP VPN Account"
+PPTP VPN Password help="PPTP VPN Password"
+PPTP VPN MPPE help="PPTP VPN MPPE"
+Failed to connect="Failed to connect"
+N2N VPN Settings="N2N VPN Settings"
+
+OpenVPN Configuration Files help="Notice:
+1.The format of the upload file should be like this "xxxx.tar.gz" or "xxxx.ovpn";
+2.The postfix of configuration files should be ".conf";
+3.The upload file can not include any directory(xxxx.tar.gz file only);
+4.If still confused please download the sample configuration and refer to it(xxxx.tar.gz file only);"
+
+OpenVPN Settings="OpenVPN Settings"
+Sample Configuration="Sample Configuration"
+OpenVPN Sample Configuration help="It's just a sample configuration which help you to refer to the format. (xxxx.tar.gz file only)<br/>"
+Download Samples="Download Samples"
+VPN detection="VPN detection"
+VPN detection help="Automatic detection of VPN, if the set time is 2 minutes, then every 2 minutes to detect the connection status with IP (e.g. 10.8.0.1) devices, if not, automatically restart VPN.Time setting 0 means no detection."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	strategy-manage.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[strategy-manage]
+Mode="Mode"
+Assignment on call duration="Assigned Call duration"
+Assignment on number of calls="Assignment on number of calls"
+Maximum Number of Call Time="Maximum Number of Call Time"
+Maximum Time of Use="Maximum Time of Use"
+Maximum Time of Sleep="Maximum Time of Sleep"
+Minutes="Minutes"
+Seconds="Seconds"
+Strategy Mode="Strategy Mode"
+File Exists="File Exists"
+File exists tip="File already exists, please operate again."
+Switchover by SMS Count="Switchover by SMS Count"
+Switchover by SMS Count help="Cut the SIM card when the number of SMS sent by the SIM card reaches the set number of SMS"
+Switchover by SMS Report Count="Switchover by SMS Report Count"
+Switchover by SMS Report Count help="Cut the SIM card when the number of SMS reports received by the SIM card reaches the set number of SMS reports"
+
+Limit by Max SMS Count Day="Limit by Max SMS Count Day"
+Limit by Max SMS Count Day help="When the number of texts sent per day reaches the limit, it will not be able to send texts. The next day, the limit will be lifted at 0:00."
+Limit by Max SMS Report Count Day="Limit by Max SMS Report Count Day"
+Limit by Max SMS Report Count Day help="Limit by Max SMS Report Count Day"
+
+Max Call Count tip="If the number of times is too large, the card may be blocked"
+Switchover by Max Answer Count Once="Switchover by Max Answer Count Once"
+Switchover by Max Answer Count Once help="When the number of times the SIM card is answered reaches the set value, the SIM card is cut."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	sim-bind.php  &  sim-batch.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Sim Bind="Sim Bind"
+Sim Batch Bind="Sim Batch Bind"
+New="New"
+has been used="has been used."
+can not be none="can not be None"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	call-advanced.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Sim Abnormal="Sim Abnormal"
+Sim Abnormal Settings="Sim Abnormal Settings"
+Abnormal Switch="Abnormal Switch"
+Abnormal Switch help="Abnormal Switch"
+Call Failed Count="Call Failed Count"
+Call Failed Count help="After the continuous call fails to reach the set number of times, the port marks the port as an abnormal SIM card and restricts the call out of the port."
+SMS Send Detection Switch="SMS Send Detection Switch"
+SMS Send Detection Switch help="After opening, when the number of successive call failures reaches the set value, send short message to check whether the port is available; if the short message is sent successfully, clear the number of successive call failures; if the short message fails, limit the port\'s outgoing."
+SMS Send Detection Count="SMS Send Detection Count"
+SMS Send Detection Count help="SMS Send Detection Count"
+Send Sms Number="Send Sms Number"
+Send Sms Number help="Send Sms Number"
+Sms Message="Sms Message"
+Sms Message help="Sms Message"
+Testing SMS report="Testing SMS report"
+Testing SMS report help="When closed, the successful sending of short message indicates that the port is available; when opened, the successful sending of short message and the receipt of short message report indicate that the port is available."
+Sim Register Settings="Sim Register Settings"
+Register Failed Switch="Register Failed Switch"
+Register Failed Switch help="Register Failed Switch"
+Register Failed Counts="Register Failed Counts"
+Register Failed Counts help="Register Failed Counts"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	log-SimProxySvr.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[log-SimProxySvr]
+SimProxySvr Logs Settings="SimProxySvr Logs Settings"
+Log_class="Log_class"
+Auto clean="Auto clean"
+maxsize="maxsize"
+Refresh Rate="Refresh Rate"
+Refresh="Refresh"
+Info="Info"
+Warning="Warning"
+Error="Error"
+Success="Success"
+USB data Logs="USB data Logs"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	simrdr-settings.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[simrdr-settings]
+Serial Number="Serial Number"
+Password="Password"
+HeartBeat Interval="HeartBeat Interval"
+Local IP="Local IP"
+SimProxy Server IP="SimProxy Server IP"
+Server Port="Server Port"
+Simbank Options="Simbank Options"
+SimRdrSvr logs="SimRdrSvr logs"
+simrdr Serial Number help="Please input the Sim Emu Serial Number,which is required 10 words."
+Emu Password help="Set the password of Sim Emu."
+HeartBeat Interval help="HeartBeat Interval"
+Local IP help="Local IP"
+SimProxy Server IP help="SimProxy Server IP"
+Server Port help="Server Port"
+SimPorxySvr server port tip="SimPorxySvr server port,default 6201"
+
+
+[js_check]
+js check domain="Invalid domain or IP address."
+js check diyname="Allowed character must be any of [-_+.<>&0-9a-zA-Z],1 - 32 characters."
+js check ssh_diyname="Allowed character must be any of [-_+.<>&0-9a-zA-Z],1 - 25 characters."
+js check diypwd="Allowed character must be any of [-_+.<>&0-9a-zA-Z],4 - 32 characters."
+js check gsmvol="Volume range: 0-100."
+js check gsmmic="Volume range: 0-15."
+js check adcchipgain="Gain range:  -42 - 20."
+js check dialprefix="Must be 0-9 or +,*,#"
+js check gsmpin="Must be 4 digits"
+js check email="Please input a valid email address"
+js check sipendp="Allowed character must be any of [0-9a-zA-Z`~!@#$%^*()_{}:|?+-=.], 1 - 32 characters."
+js check sipname="Allowed character must be any of [0-9a-zA-Z$*+-=_.], 1 - 32 characters."
+js check sippwd="Allowed character must be any of [0-9a-zA-Z`~!#@$%^&*()_+{}|<>-=[],.], 1 - 32 characters."
+js check sipnumber="Only allow digits characters, length: 1 - 32."
+js check networkport="Please input valid port number (1-65535)"
+js check smtpuser="Please input a valid STMP user name"
+js check smtppwd="Password character range: 1-64"
+js check phonenum="Please input a valid phone number!"
+js check ussd="Please input a valid USSD number!"
+js check ip="Please input a valid IP address"
+js check mac="Please input a valid MAC address"
+js check pppoeuser="Please input valid username"
+js check pppoepwd="Please input valid password"
+js check float="Please input floating number"
+js check integer="Please input integer number"
+js check busername="you need to set a number for username"
+
+js check smail="You must set a email address."
+
+js check dtmf float 1="Please input floating number"
+js check dtmf float 2="The input should be less than 100.0"
+js check dtmf integer 1="Please input integer data"
+js check dtmf integer 2="The input should be less than 100"
+
+js check digitgain="Invalid value! Range: from -20.0dB to 6dB, in 0.1 dB increments."
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+;	set-info.php
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Set Information="Set Information"
+Switch@setinfo="Switch"
+Switch help@setinfo="If this switch is enabled, the following parameter information will be used."
+Product Name help="Product Name"
+Contact Address help="Contact Address"
+Tel help="Tel"
+Fax help="Fax"
+E-Mail help="E-Mail"
+Web Site help="Web Site"
+Download Sample Images="Download Sample Images"
+Download Sample Images help="Download the case picture and modify it according to the size of the picture."
+Header Image help="Header background picture, the size of the picture is 1280x417, can be seen in the following case picture."
+Footer Image help="Footer background picture, the size of the picture is 1280x105, can be seen in the following case picture."

@@ -1,0 +1,140 @@
+<?php
+
+$filename = basename($_SERVER['REQUEST_URI']);
+
+if(($pos=strpos($filename,'?'))) {
+	$filename = substr($filename,0,$pos);
+}	
+
+$nav_lists = array(
+	"system"=>array(
+		array("simbank_manage.php","Simbank"),
+		array("gateway_manage.php","Gateway"),
+		array("group_manage.php","Group"),
+		array("local_manage.php","Location"),
+		array("strategy_manage.php","Strategy"),
+		array("user_manage.php","User"),
+		array("simrdr-settings.php","SimRdr Settings"),
+		array("simproxy-settings.php","SimProxy Settings"),
+	),
+);
+$nav_lists_count = count($nav_lists);
+?>
+
+<div id="bg">
+	<div id="menu">
+		<UL id="nav">
+<?php
+	$k=0;
+	$nana="";
+	$nanh="";
+	$crumb = 0;
+	foreach($nav_lists as $key=>$value){
+		echo "<li>";
+		$n=0;
+		foreach($value as $row) {
+			if(strcmp($filename,$row[0]) == 0) {
+				$nana = $key;
+			}
+			if($n==0) {
+				$nanh=$row[0];
+			}
+
+			$n++;
+		}
+
+		if(strcmp($nana,$key) == 0) {
+			$crumb = $k ;
+			echo "<a class=\"nav_on\"";
+		}else{
+			echo "<a class=\"nav_off\"";
+		}
+		
+		echo " id=mynav".$k." onmousedown=javascript:switch_over(" . $k.",". $nav_lists_count.") href=\"/php/$nanh\">";
+		echo $key;
+		echo "</a></li>\n";
+
+		if($k < count($nav_lists)-1) {
+			echo "<li class=\"menu_line\">|</li>\n";
+		}
+		$k++;
+	}
+?>
+		</UL>
+
+		<div id=menu_con>
+<?php
+	$i=0;
+	$nanc="";
+	foreach($nav_lists as $key=>$value) {
+		if($nana === $key){
+			echo "<div style=\"DISPLAY: block\" id=qh_con".$i." ><UL>\n";
+		}else{
+			echo "<div style=\"DISPLAY: none\" id=qh_con".$i." ><UL>\n";
+		}
+		$n=0;
+		echo "<li class=\"bgl\"><img src=\"/images/bg_l.gif\" /></li>\n";
+		foreach($value as $row) {
+			if($n > 0) {
+				echo "<li class=\"menu_con_line\">|</li>\n";
+			}
+
+			if($filename === $row[0]) {
+				echo "<li class=\"bgbg\"><a href=\"/php/$row[0]\" class=\"con_off\">";
+				echo $row[1];
+				echo "</a></li>\n";
+				$nanc=$row[1];
+			} else {
+				echo "<li class=\"bgbg\"><a href=\"/php/$row[0]\" class=\"con_on\">";
+				echo $row[1];
+				echo "</a></li>\n";
+			}
+			$n++;
+		}
+
+		echo "<li class=\"bgr\"><img src=\"/images/bg_r.gif\" /></li>\n";
+		echo "</UL></div>\n";
+		$i++;
+	}
+?>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var menu_confirm = 1;
+	<?php for($key = 0 ; $key <= $k ;$key++){ ?>
+			$("#mynav"+<?php echo $key; ?>).mouseover(function(){
+				$(".nav_li_hover").removeClass("nav_li_hover");
+				$("#mynav"+<?php echo $key; ?>).addClass("nav_li_hover");
+				show_nav(<?php echo $key; ?>);
+			});
+	<?php } ?>
+			function show_nav(cur_num){
+				var nav_num = <?php echo $k; ?>;
+				for(var num = 0 ; num <= nav_num ; num++){
+					if(cur_num == num){
+						$("#qh_con"+num).css("display","block");
+					} else {
+						$("#qh_con"+num).css("display","none");
+					}
+				}
+			}
+			$("#menu").mouseover(function(){
+				menu_confirm = 1;
+			});
+			$("#menu").mouseleave(function(){
+				menu_confirm = 0;
+				setTimeout(function(){
+					if(menu_confirm == 0){
+						show_nav(<?php echo $crumb; ?>);
+						$(".nav_li_hover").removeClass("nav_li_hover");
+					}
+				},1500);
+			});
+		});
+	</script>
+	<div id="aeu">
+		<img src="/images/icons/<?PHP echo $nana ?>.gif" />
+	</div>
+
+	<div id="lps">

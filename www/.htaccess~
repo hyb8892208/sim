@@ -1,0 +1,4 @@
+AuthName Simbank
+AuthType basic 
+AuthUserFile /opt/simbank/conf/.htmember
+require valid-user 

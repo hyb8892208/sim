@@ -1,0 +1,10 @@
+sql语句错误：
+UPDATE tb_simbank_link_info SET ob_sb_seri="simbank001",ob_sb_link_bank_nbr=0,ob_sb_link_sim_nbr=5,n_gw_link_stat=3 where ob_gw_seri="e000009821" and ob_gw_bank_nbr=2 and ob_gw_slot_nbr=6
+客户IP:
+时间 :2016-03-17 14:38:57
+
+sql语句错误：
+UPDATE tb_gateway_link_info SET ob_sb_seri="simbank001",ob_sb_link_bank_nbr=2,ob_sb_link_sim_nbr=1,n_gw_link_stat=3 where ob_gw_seri="e000009821" and ob_gw_bank_nbr=2 and ob_gw_slot_nbr=7
+客户IP:
+时间 :2016-03-17 14:42:04
+

@@ -1,0 +1,234 @@
+#!/bin/php
+
+<?php
+
+//default setting;
+/************************************************/
+$conf_path = '/config/simbank/conf';
+$conf_file = 'logfile_monitor.conf';
+$conf_path_file = $conf_path."/".$conf_file;
+$default_maxsize = 20*1024;
+$interval = 6;
+/************************************************/
+
+include_once("/opt/simbank/www/inc/aql.php");
+include_once("/opt/simbank/www/inc/function.inc");
+
+function generate_default_conf()
+{
+	global $conf_path_file;
+
+	$buf = <<<EOF
+[sim_log]
+autoclean=on
+maxsize=1MB
+EOF;
+//EOF
+	$flock = lock_file($conf_path_file);
+	if(($fh = fopen($conf_path_file, "w")) <= 0) {
+		unlock_file($flock);
+		echo "open $conf_path_file error\n";
+		exit(1);
+	}
+	if(fwrite($fh, $buf)===false) {
+		unlock_file($flock);
+		echo "write $conf_path_file error\n";
+		exit(2);
+	}
+	fclose($fh);
+	unlock_file($flock);
+}
+
+function check_cut_txt($file, $maxsize, $flag)
+{
+	clearstatcache();
+	if(is_dir($file)){
+		$dir = $file;
+		$dir_handle = opendir($dir);
+		while(($file = readdir($dir_handle))!= false){
+			if($file == '.' || $file == '..') {
+				continue;
+			}   
+			$file = $dir."/".$file;
+			check_cut_txt($file, $maxsize);
+		}  
+	}else{
+		while(file_exists($file) && filesize($file) > $maxsize){
+			//$size = $maxsize/2;
+			$size = 1;
+			$flock = lock_file($file);
+			$fh = fopen($file, "r+");
+			fseek($fh, 0, SEEK_CUR);
+			$bef = fread($fh, $size);
+			fclose($fh);
+			unlock_file($flock);
+			clearstatcache();
+			
+			$flock = lock_file($file);
+			$fh = fopen($file, "r+");
+			fseek($fh, -$size, SEEK_END);
+			$buf = fread($fh, $size);
+			ftruncate($fh, 0);
+			rewind($fh);
+			fwrite($fh, $buf);
+			fclose($fh);
+			unlock_file($flock);
+			clearstatcache();
+			
+			/*//add data to disk
+			$disk_dir = '/mnt/data/log';
+			if(!file_exists($disk_dir)){
+				mkdir($disk_dir, 0777, true);
+			}
+			
+			if($flag == 'SimProxySvr'){
+				$disk_file = '/mnt/data/log/SimProxySvr.log';
+			}else if($flag == 'SimRdrSvr'){
+				$disk_file = '/mnt/data/log/SimRdrSvr.log';
+			}
+			
+			$flock = lock_file($disk_file);
+			$fh = fopen($disk_file, "w+");
+			fwrite($fh, $bef);
+			fclose($fh);
+			unlock_file($flock);
+			clearstatcache();*/
+		}
+	}
+}
+
+function monitor_file_func($monitor_file, $interval)
+{
+	global $res;
+	global $default_maxsize;
+	$f = 0;
+	
+	while(true){
+		if($f == 0){
+			$bank_file_arr = read_bank_file();
+			if(file_exists('/tmp/log/bank') && !empty($bank_file_arr)){
+				$monitor_file = monitor_file($res, $default_maxsize);
+				$f = 1;
+			}
+		}
+		foreach($monitor_file as $key => $value){
+			if(isset($monitor_file[$key]['file'])){
+				$file = $monitor_file[$key]['file'];
+			}else{
+				$file = '';
+			}
+			
+			$maxsize = $monitor_file[$key]['maxsize'];
+			
+			if(isset($monitor_file[$key]['flag'])){
+				$flag = $monitor_file[$key]['flag'];
+			}else{
+				$flag = '';
+			}
+			
+			check_cut_txt($file, $maxsize, $flag);
+		}
+		sleep($interval);
+	}
+}
+
+################################################################
+#
+#
+#	file monitor
+#
+#
+################################################################
+
+if(!file_exists($conf_path_file)) {
+	generate_default_conf();
+}
+
+/* read conf */
+$aql = new aql();
+$setok = $aql->set('basedir',$conf_path);
+if (!$setok) {
+	echo $aql->get_error();
+	exit(2);
+}
+
+$hlock=lock_file($conf_path_file);
+if(!$aql->open_config_file($conf_path_file)){
+	echo $aql->get_error();
+	unlock_file($hlock);
+	exit(3);
+}else{
+	$res = $aql->query("select * from $conf_file");
+	unlock_file($hlock);
+}    
+
+/* get monitor file */
+if(!is_array($res))
+	exit(4);
+
+function read_bank_file(){
+    $files=array();
+    $queue=array('/tmp/log/bank');
+    while($data=each($queue)){
+        $path=$data['value'];
+        if(is_dir($path) && $handle=opendir($path)){
+            while($file=readdir($handle)){
+                if($file=='.'||$file=='..') continue;
+				$files[] = $path.'/'.$file;
+                $real_path = $path.'/'.$file;
+                if (is_dir($real_path)) $queue[] = $real_path;
+            }
+			closedir($handle);
+        }
+    }
+    return $files;
+}
+
+function monitor_file($res, $default_maxsize){
+	$monitor_file = array();
+	foreach($res as $key => $value){
+		if(isset($res["$key"]['autoclean']) && $res["$key"]['autoclean'] == 'on'){
+			if($key == 'sim_log'){
+				$monitor_file["$key"]['file'] = "/tmp/log/SimProxySvr.log";
+				$monitor_file["$key"]['flag'] = 'SimProxySvr';
+			}else if($key == 'rdr_log'){
+				$monitor_file["$key"]['file'] = "/tmp/log/SimRdrSvr.log";
+				$monitor_file["$key"]['flag'] = 'SimRdrSvr';
+			}else if($key == 'usb_data_log'){
+				$temp_arr = read_bank_file();
+				for($i=0;$i<count($temp_arr);$i++){
+					$monitor_file[$temp_arr[$i]]['file'] = $temp_arr[$i];
+					if(isset($res["$key"]['maxsize']) && $res["$key"]['maxsize'] != ''){
+						preg_match("/^[0-9]+/", $res["$key"]['maxsize'], $maxsize_a);
+						$monitor_file[$temp_arr[$i]]['maxsize'] = trim($maxsize_a[0])*1024;
+					}else{
+						$monitor_file[$temp_arr[$i]]['maxsize'] = $default_maxsize;
+					}
+					$monitor_file[$temp_arr[$i]]['flag'] = '';
+				}
+			}
+			if(isset($res["$key"]['maxsize']) && $res["$key"]['maxsize'] != ''){
+				preg_match("/^[0-9]+/", $res["$key"]['maxsize'], $maxsize_a);
+				preg_match("/[KMB]+$/", $res["$key"]['maxsize'], $unit_a);
+				if(isset($maxsize_a[0]) && isset($unit_a[0])){
+					if(trim($unit_a[0]) == "KB"){
+						$monitor_file["$key"]['maxsize'] = trim($maxsize_a[0])*1024;
+					}
+					elseif(trim($unit_a[0]) == "MB"){
+						$monitor_file["$key"]['maxsize'] = trim($maxsize_a[0])*1024*1024;
+					}
+				}
+			}
+			if(!isset($monitor_file["$key"]['maxsize'])){
+				$monitor_file["$key"]['maxsize'] = $default_maxsize;
+			}
+		}
+	}
+	return $monitor_file;
+}
+$monitor_file = monitor_file($res, $default_maxsize);
+
+/* start monitor */
+monitor_file_func($monitor_file, $interval);
+
+?>
